@@ -3,44 +3,947 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jeongmin Kim - Resume</title>
+    <meta name="description" content="Jeongmin Kim, Ph.D. - researcher and technical lead manager working on blockchain security, DeFi infrastructure, program analysis, and AI developer tooling.">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <title>Jeongmin Kim - Researcher & Technical Lead Manager</title>
     <style>
-        body, html {
+        :root {
+            --ink: #101418;
+            --muted: #53606c;
+            --line: #d8dee4;
+            --paper: #f8faf8;
+            --panel: #ffffff;
+            --coal: #111820;
+            --cyan: #1d8f9f;
+            --green: #2f7d58;
+            --amber: #b26b20;
+            --red: #b14b43;
+            --shadow: 0 18px 48px rgba(16, 20, 24, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
             margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow: hidden;
-            background-color: #f4f4f4;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--ink);
+            background: var(--paper);
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            line-height: 1.55;
+            overflow-x: hidden;
         }
-        iframe {
-            width: 100%;
-            height: 100vh;
-            border: none;
-        }
-        .controls {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 10px 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            z-index: 100;
-        }
+
         a {
+            color: inherit;
+            text-decoration-color: rgba(29, 143, 159, 0.42);
+            text-underline-offset: 4px;
+        }
+
+        a:hover {
+            color: var(--cyan);
+        }
+
+        .shell {
+            width: calc(100% - 40px);
+            max-width: 1160px;
+            margin: 0 auto;
+        }
+
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            background: rgba(248, 250, 248, 0.92);
+            border-bottom: 1px solid rgba(216, 222, 228, 0.9);
+            backdrop-filter: blur(16px);
+        }
+
+        .nav {
+            min-height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .brand {
+            font-weight: 760;
+            letter-spacing: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            color: var(--muted);
+            font-size: 14px;
+            font-weight: 650;
+            white-space: nowrap;
+        }
+
+        .nav-links a {
             text-decoration: none;
-            color: #007bff;
-            font-weight: bold;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-height: 40px;
+            padding: 9px 14px;
+            border: 1px solid rgba(16, 20, 24, 0.14);
+            border-radius: 8px;
+            background: #ffffff;
+            color: var(--ink);
+            font-size: 14px;
+            font-weight: 720;
+            text-decoration: none;
+        }
+
+        .button.dark {
+            background: var(--coal);
+            color: #ffffff;
+            border-color: var(--coal);
+        }
+
+        .button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 18px rgba(16, 20, 24, 0.12);
+        }
+
+        .hero {
+            position: relative;
+            min-height: calc(100vh - 64px);
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background:
+                linear-gradient(90deg, rgba(10, 15, 20, 0.92) 0%, rgba(10, 15, 20, 0.77) 42%, rgba(10, 15, 20, 0.42) 100%),
+                url("assets/hero-research-systems.png") center / cover no-repeat;
+            color: #ffffff;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: auto 0 0;
+            height: 92px;
+            background: linear-gradient(180deg, rgba(248, 250, 248, 0), var(--paper));
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 320px;
+            align-items: center;
+            gap: 64px;
+            padding: 72px 0 108px;
+        }
+
+        .hero-grid > * {
+            min-width: 0;
+        }
+
+        .eyebrow {
+            margin: 0 0 18px;
+            color: #95d6d3;
+            font-size: 13px;
+            font-weight: 780;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        h1,
+        h2,
+        h3 {
+            margin: 0;
+            line-height: 1.08;
+            letter-spacing: 0;
+        }
+
+        h1 {
+            max-width: 760px;
+            font-size: clamp(46px, 7vw, 86px);
+            font-weight: 840;
+            overflow-wrap: break-word;
+        }
+
+        .mobile-title {
+            display: none;
+        }
+
+        .hero-copy {
+            max-width: 720px;
+            margin: 24px 0 0;
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 19px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 32px;
+        }
+
+        .hero-actions .button {
+            border-color: rgba(255, 255, 255, 0.24);
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+        }
+
+        .hero-actions .button.dark {
+            background: #ffffff;
+            color: var(--coal);
+            border-color: #ffffff;
+        }
+
+        .portrait-slot {
+            justify-self: end;
+            width: min(320px, 100%);
+            aspect-ratio: 4 / 5;
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            border-radius: 8px;
+            background:
+                linear-gradient(155deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.04)),
+                radial-gradient(circle at 48% 32%, rgba(149, 214, 211, 0.35), transparent 34%),
+                rgba(17, 24, 32, 0.76);
+            box-shadow: 0 28px 70px rgba(0, 0, 0, 0.28);
+            display: grid;
+            place-items: center;
+            overflow: hidden;
+        }
+
+        .portrait-initials {
+            width: 58%;
+            aspect-ratio: 1;
+            border: 1px solid rgba(255, 255, 255, 0.24);
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 54px;
+            font-weight: 780;
+        }
+
+        .stats {
+            position: relative;
+            z-index: 2;
+            margin-top: -60px;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        .stat {
+            min-height: 118px;
+            padding: 20px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--panel);
+            box-shadow: var(--shadow);
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 30px;
+            line-height: 1;
+        }
+
+        .stat span {
+            display: block;
+            margin-top: 10px;
+            color: var(--muted);
+            font-size: 14px;
+            font-weight: 620;
+        }
+
+        section {
+            padding: 82px 0;
+        }
+
+        .section-head {
+            display: grid;
+            grid-template-columns: 0.7fr 1.3fr;
+            gap: 48px;
+            margin-bottom: 32px;
+        }
+
+        .section-head h2 {
+            font-size: clamp(28px, 4vw, 44px);
+        }
+
+        .section-head p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 17px;
+        }
+
+        .band {
+            background: #ffffff;
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .card {
+            min-height: 100%;
+            padding: 24px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--panel);
+        }
+
+        .card.highlight {
+            border-top: 4px solid var(--green);
+        }
+
+        .card.amber {
+            border-top: 4px solid var(--amber);
+        }
+
+        .card.cyan {
+            border-top: 4px solid var(--cyan);
+        }
+
+        .card.red {
+            border-top: 4px solid var(--red);
+        }
+
+        .card h3 {
+            font-size: 20px;
+        }
+
+        .card p {
+            margin: 12px 0 0;
+            color: var(--muted);
+        }
+
+        .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 18px;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            min-height: 28px;
+            padding: 4px 9px;
+            border: 1px solid rgba(16, 20, 24, 0.12);
+            border-radius: 999px;
+            color: #37424c;
+            background: #f6f8f7;
+            font-size: 12px;
+            font-weight: 720;
+        }
+
+        .list {
+            display: grid;
+            gap: 14px;
+        }
+
+        .paper {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 18px;
+            padding: 22px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--panel);
+        }
+
+        .paper-title {
+            font-size: 19px;
+            font-weight: 780;
+        }
+
+        .paper-authors,
+        .paper-venue {
+            margin-top: 8px;
+            color: var(--muted);
+        }
+
+        .paper-note {
+            align-self: start;
+            min-width: 168px;
+            padding: 12px;
+            border-left: 3px solid var(--cyan);
+            background: #eef8f7;
+            color: #244b51;
+            font-size: 13px;
+            font-weight: 740;
+        }
+
+        .timeline {
+            display: grid;
+            gap: 18px;
+        }
+
+        .role {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 28px;
+            padding: 24px 0;
+            border-top: 1px solid var(--line);
+        }
+
+        .role:first-child {
+            border-top: 0;
+        }
+
+        .role-date {
+            color: var(--muted);
+            font-weight: 720;
+        }
+
+        .role h3 {
+            font-size: 20px;
+        }
+
+        .role p {
+            margin: 10px 0 0;
+            color: var(--muted);
+        }
+
+        .repo-list {
+            display: grid;
+            gap: 12px;
+        }
+
+        .repo {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 16px;
+            align-items: center;
+            padding: 18px 0;
+            border-top: 1px solid var(--line);
+        }
+
+        .repo:first-child {
+            border-top: 0;
+        }
+
+        .repo strong {
+            display: block;
+        }
+
+        .repo span {
+            display: block;
+            margin-top: 4px;
+            color: var(--muted);
+        }
+
+        .footer {
+            padding: 46px 0;
+            background: var(--coal);
+            color: rgba(255, 255, 255, 0.82);
+        }
+
+        .footer .shell {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer a {
+            color: #ffffff;
+        }
+
+        @media (max-width: 920px) {
+            .nav {
+                align-items: flex-start;
+                flex-direction: column;
+                padding: 14px 0;
+            }
+
+            .nav-links {
+                width: 100%;
+                overflow-x: auto;
+                padding-bottom: 2px;
+            }
+
+            .nav-links .button {
+                width: auto;
+                flex: 0 0 auto;
+            }
+
+            .hero {
+                min-height: auto;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 36px;
+                padding: 72px 0 118px;
+            }
+
+            .portrait-slot {
+                justify-self: start;
+                width: min(260px, 70vw);
+            }
+
+            .stat-grid,
+            .grid-3,
+            .grid-2,
+            .section-head {
+                grid-template-columns: 1fr;
+            }
+
+            .paper,
+            .role,
+            .repo {
+                grid-template-columns: 1fr;
+            }
+
+            .paper-note {
+                min-width: 0;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .shell {
+                width: calc(100% - 28px);
+            }
+
+            .hero-copy {
+                font-size: 17px;
+                max-width: min(350px, calc(100vw - 28px));
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            .desktop-title {
+                display: none;
+            }
+
+            .mobile-title {
+                display: block;
+                max-width: min(350px, calc(100vw - 28px));
+            }
+
+            .hero-actions .button,
+            .button {
+                width: 100%;
+            }
+
+            section {
+                padding: 58px 0;
+            }
+
+            .stat {
+                min-height: 96px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="controls">
-        <a href="Jeongmin_Kim_Resume_2026.pdf" target="_blank">Download PDF</a>
-    </div>
-    <iframe src="Jeongmin_Kim_Resume_2026.pdf#toolbar=0" type="application/pdf">
-        <p>Your browser does not support PDFs. <a href="Jeongmin_Kim_Resume_2026.pdf">Download PDF instead</a>.</p>
-    </iframe>
+    <header class="topbar">
+        <nav class="shell nav" aria-label="Primary">
+            <a class="brand" href="#top">Jeongmin Kim</a>
+            <div class="nav-links">
+                <a href="#work">Work</a>
+                <a href="#papers">Papers</a>
+                <a href="#projects">Projects</a>
+                <a href="#reports">Reports</a>
+                <a href="#contact">Contact</a>
+                <a class="button" href="Jeongmin_Kim_Resume_2026.pdf" target="_blank" rel="noreferrer">CV</a>
+            </div>
+        </nav>
+    </header>
+
+    <main id="top">
+        <section class="hero" aria-label="Intro">
+            <div class="shell hero-grid">
+                <div>
+                    <p class="eyebrow">Researcher - TLM - Builder</p>
+                    <h1 class="desktop-title">Blockchain security, DeFi infrastructure, and AI developer tools.</h1>
+                    <h1 class="mobile-title">Blockchain security.<br>DeFi infrastructure.<br>AI developer tools.</h1>
+                    <p class="hero-copy">
+                        I lead network and blockchain development at PiLab / Bifrost while continuing research in
+                        programmable compliance, DeFi attack measurement, automatic program analysis, and systems for
+                        developer productivity.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="button dark" href="#papers">Read research</a>
+                        <a class="button" href="https://github.com/appff" target="_blank" rel="noreferrer">GitHub</a>
+                        <a class="button" href="mailto:appff@pi-lab.io">Email</a>
+                    </div>
+                </div>
+                <div class="portrait-slot" aria-label="Portrait area">
+                    <!-- Replace this block with an image later, for example:
+                    <img src="assets/profile.jpg" alt="Jeongmin Kim" width="640" height="800"> -->
+                    <div class="portrait-initials">JK</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="shell stats" aria-label="Highlights">
+            <div class="stat-grid">
+                <div class="stat">
+                    <strong>10+</strong>
+                    <span>years across research and engineering</span>
+                </div>
+                <div class="stat">
+                    <strong>3</strong>
+                    <span>peer-reviewed systems and networking papers</span>
+                </div>
+                <div class="stat">
+                    <strong>6</strong>
+                    <span>patents and patent applications listed in CV</span>
+                </div>
+                <div class="stat">
+                    <strong>5+</strong>
+                    <span>public research and AI-tooling repositories</span>
+                </div>
+            </div>
+        </div>
+
+        <section id="work">
+            <div class="shell">
+                <div class="section-head">
+                    <h2>Current Focus</h2>
+                    <p>
+                        My work sits between research-grade system design and production delivery: blockchain node
+                        engineering, cross-chain relaying, Bitcoin interoperability, DeFi services, and AI agents for
+                        software development.
+                    </p>
+                </div>
+                <div class="grid-3">
+                    <article class="card highlight">
+                        <h3>DeFi and Blockchain Security</h3>
+                        <p>
+                            Researching real-time invariant checking, attack playbooks, programmable compliance, and
+                            risk controls for blockchain transaction systems.
+                        </p>
+                        <div class="meta">
+                            <span class="tag">Evanesca</span>
+                            <span class="tag">APOL</span>
+                            <span class="tag">RegTechBench</span>
+                        </div>
+                    </article>
+                    <article class="card cyan">
+                        <h3>Infrastructure Engineering</h3>
+                        <p>
+                            Leading engineering across EVM-compatible network components, CCCP V2 cross-chain protocol,
+                            native Bitcoin relaying, and application-layer DeFi services.
+                        </p>
+                        <div class="meta">
+                            <span class="tag">EVM</span>
+                            <span class="tag">Cross-chain</span>
+                            <span class="tag">BTCFi</span>
+                        </div>
+                    </article>
+                    <article class="card amber">
+                        <h3>AI Developer Tools</h3>
+                        <p>
+                            Building AI assistants for Solidity engineering, code generation, task automation, English
+                            learning, and crypto-market research.
+                        </p>
+                        <div class="meta">
+                            <span class="tag">Dobby</span>
+                            <span class="tag">NightShift</span>
+                            <span class="tag">Alchemisty</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="band" id="papers">
+            <div class="shell">
+                <div class="section-head">
+                    <h2>Selected Papers</h2>
+                    <p>
+                        Peer-reviewed work in network behavior analysis, IoT interoperability, and mobile application
+                        acceleration. Author position and acceptance rate are called out where available.
+                    </p>
+                </div>
+                <div class="list">
+                    <article class="paper">
+                        <div>
+                            <div class="paper-title">
+                                <a href="https://ieeexplore.ieee.org/document/9259352/" target="_blank" rel="noreferrer">Lumos: Improving Smart Home IoT Visibility and Interoperability Through Analyzing Mobile Apps</a>
+                            </div>
+                            <div class="paper-authors">Jeongmin Kim, Steven Y. Ko, Sooel Son, Dongsu Han</div>
+                            <div class="paper-venue">IEEE ICNP 2020</div>
+                        </div>
+                        <div class="paper-note">First author<br>Acceptance rate 16.3%</div>
+                    </article>
+                    <article class="paper">
+                        <div>
+                            <div class="paper-title">
+                                <a href="https://dl.acm.org/doi/10.1145/3281411.3281416" target="_blank" rel="noreferrer">APPx: An Automated App Acceleration Framework for Low Latency Mobile App</a>
+                            </div>
+                            <div class="paper-authors">Byungkwon Choi, Jeongmin Kim, Daeyang Cho, Seongmin Kim, Dongsu Han</div>
+                            <div class="paper-venue">ACM CoNEXT 2018</div>
+                        </div>
+                        <div class="paper-note">Second author<br>Acceptance rate 19.7%</div>
+                    </article>
+                    <article class="paper">
+                        <div>
+                            <div class="paper-title">
+                                <a href="https://dl.acm.org/doi/10.1145/2999572.2999596" target="_blank" rel="noreferrer">Extractocol: Enabling Automatic Protocol Behavior Analysis for Android Applications</a>
+                            </div>
+                            <div class="paper-authors">Jeongmin Kim, Hyunwoo Choi, Hun Namkung, Woohyun Choi, Byungkwon Choi, Hyunwook Hong, Yongdae Kim, Jonghyup Lee, Dongsu Han</div>
+                            <div class="paper-venue">ACM CoNEXT 2016</div>
+                        </div>
+                        <div class="paper-note">Co-first author<br>Acceptance rate 18.4%</div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="shell">
+                <div class="section-head">
+                    <h2>Public Work</h2>
+                    <p>
+                        Public repositories for technical reports, datasets, and AI tools. Internal systems such as
+                        Dobby remain represented by project summaries rather than source links.
+                    </p>
+                </div>
+                <div class="grid-2">
+                    <article class="card highlight">
+                        <h3>RegTechBench</h3>
+                        <p>
+                            Evidence-aware benchmark package for blockchain regulatory monitoring, built around six
+                            workload families and deterministic reference checks. The current report describes 413,531
+                            transaction-like entries, 384 delayed or incorrect external-risk summaries, and 3.38M
+                            same-token NFT back-and-forth matches.
+                        </p>
+                        <div class="meta">
+                            <a class="tag" href="https://github.com/appff/RegTechBench" target="_blank" rel="noreferrer">GitHub</a>
+                            <a class="tag" href="assets/RegTechBench.pdf" target="_blank" rel="noreferrer">Report PDF</a>
+                        </div>
+                    </article>
+                    <article class="card red">
+                        <h3>Evanesca</h3>
+                        <p>
+                            Measuring DeFi attack playbooks at scale. This line of work is being prepared as public
+                            code plus a technical report, without claiming an accepted conference publication.
+                        </p>
+                        <div class="meta">
+                            <a class="tag" href="https://github.com/appff/Evanesca_public" target="_blank" rel="noreferrer">GitHub</a>
+                            <span class="tag">Technical report planned</span>
+                        </div>
+                    </article>
+                </div>
+                <div class="repo-list" aria-label="Repository links">
+                    <div class="repo">
+                        <div>
+                            <strong>NightShift</strong>
+                            <span>Open-source AI coding agent for software-development assistance, code generation, and task automation.</span>
+                        </div>
+                        <a class="button" href="https://github.com/appff/NightShift" target="_blank" rel="noreferrer">Repo</a>
+                    </div>
+                    <div class="repo">
+                        <div>
+                            <strong>LanguageDobby</strong>
+                            <span>Personal English-learning web app that turns YouTube videos into guided speaking and learning material.</span>
+                        </div>
+                        <a class="button" href="https://github.com/appff/LanguageDobby" target="_blank" rel="noreferrer">Repo</a>
+                    </div>
+                    <div class="repo">
+                        <div>
+                            <strong>Alchemisty / Alchemist</strong>
+                            <span>AI agent for financial research, crypto-market analysis, and portfolio-management support.</span>
+                        </div>
+                        <a class="button" href="https://github.com/appff/Alchemist" target="_blank" rel="noreferrer">Repo</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="band" id="reports">
+            <div class="shell">
+                <div class="section-head">
+                    <h2>Technical Reports Pipeline</h2>
+                    <p>
+                        Several production and research systems are being written up. The page is structured so each
+                        item can become a report link when the write-up is ready.
+                    </p>
+                </div>
+                <div class="grid-3">
+                    <article class="card">
+                        <h3>APOL</h3>
+                        <p>
+                            Adaptive Policy Orchestration Layer for programmable compliance and real-world-asset
+                            tokenization. RegTechBench is the supporting benchmark work for APOL evaluation.
+                        </p>
+                        <div class="meta">
+                            <span class="tag">Manuscript in preparation</span>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <h3>BRP</h3>
+                        <p>
+                            Technical report reserved for blockchain relaying and protocol infrastructure work.
+                        </p>
+                        <div class="meta">
+                            <span class="tag">Report slot</span>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <h3>Watchtower</h3>
+                        <p>
+                            Technical report reserved for monitoring, risk detection, and operational response systems.
+                        </p>
+                        <div class="meta">
+                            <span class="tag">Report slot</span>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <h3>SmartExecutor</h3>
+                        <p>
+                            Technical report reserved for smart-contract execution analysis and developer tooling.
+                        </p>
+                        <div class="meta">
+                            <span class="tag">Report slot</span>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <h3>Dobby</h3>
+                        <p>
+                            Internal Solidity AI coding agent and chat assistant for development workflows, deployment
+                            support, and smart-contract security analysis.
+                        </p>
+                        <div class="meta">
+                            <span class="tag">Internal system</span>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <h3>ChainRunner</h3>
+                        <p>
+                            Core engine work for real-time detection of anomalous financial behavior in DeFi ecosystems.
+                        </p>
+                        <div class="meta">
+                            <span class="tag">Research system</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="shell">
+                <div class="section-head">
+                    <h2>Experience</h2>
+                    <p>
+                        Research depth paired with delivery responsibility across blockchain infrastructure, DeFi
+                        products, program analysis, and applied AI tooling.
+                    </p>
+                </div>
+                <div class="timeline">
+                    <article class="role">
+                        <div class="role-date">Oct 2022 - Present</div>
+                        <div>
+                            <h3>Software Development Group Manager, CTO Staff - PiLab / Bifrost</h3>
+                            <p>
+                                Lead network development across blockchain nodes, cross-chain protocol engineering,
+                                relaying backends, and application-layer services, including EVM-compatible components,
+                                CCCP V2, native Bitcoin relaying, and DeFi products.
+                            </p>
+                        </div>
+                    </article>
+                    <article class="role">
+                        <div class="role-date">Jan 2020 - Jul 2022</div>
+                        <div>
+                            <h3>Software Engineer and Researcher - PiLab</h3>
+                            <p>
+                                Researched and implemented systems for real-time detection of anomalous financial
+                                behavior in DeFi ecosystems and contributed to ChainRunner system design.
+                            </p>
+                        </div>
+                    </article>
+                    <article class="role">
+                        <div class="role-date">2016 - 2023</div>
+                        <div>
+                            <h3>Ph.D., KAIST School of Electrical Engineering</h3>
+                            <p>
+                                Dissertation: Semantic-based Network Behavior Analysis and Its Utilizations. Advisor:
+                                Dongsu Han.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="band">
+            <div class="shell">
+                <div class="section-head">
+                    <h2>Recognition</h2>
+                    <p>
+                        Selected fellowships, grants, collaborations, and patents from the CV.
+                    </p>
+                </div>
+                <div class="grid-3">
+                    <article class="card cyan">
+                        <h3>Fellowships and Grants</h3>
+                        <p>
+                            Global Fellowship from the National Research Foundation of Korea, Iljun Fellowship,
+                            ACM SIGCOMM Travel Grant, and ACM CoNEXT Travel Grants.
+                        </p>
+                    </article>
+                    <article class="card amber">
+                        <h3>MSRA Collaboration</h3>
+                        <p>
+                            Two-year Microsoft Research Asia collaboration on smart-home IoT interoperability through
+                            Android app analysis, informing the Lumos research line.
+                        </p>
+                    </article>
+                    <article class="card highlight">
+                        <h3>Patents</h3>
+                        <p>
+                            Inventor on U.S. and Korean patents spanning mobile application acceleration, IoT visibility,
+                            network-signature dependency analysis, and smart-contract execution analysis.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="contact">
+        <div class="shell">
+            <div>
+                <strong>Jeongmin Kim, Ph.D.</strong><br>
+                Seoul, South Korea
+            </div>
+            <div>
+                <a href="mailto:appff@pi-lab.io">appff@pi-lab.io</a> -
+                <a href="https://github.com/appff" target="_blank" rel="noreferrer">github.com/appff</a> -
+                <a href="Jeongmin_Kim_Resume_2026.pdf" target="_blank" rel="noreferrer">Resume PDF</a> -
+                <a href="Jeongmin_Kim_Resume_2026_KR.pdf" target="_blank" rel="noreferrer">Korean Resume PDF</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
