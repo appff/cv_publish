@@ -350,6 +350,28 @@
             margin: 8px 0;
         }
 
+        .portfolio-block {
+            padding-top: 34px;
+            margin-top: 34px;
+            border-top: 1px solid var(--line);
+        }
+
+        .section-head + .portfolio-block {
+            padding-top: 0;
+            border-top: 0;
+        }
+
+        .portfolio-title {
+            font-size: 24px;
+        }
+
+        .portfolio-intro {
+            max-width: 780px;
+            margin: 10px 0 22px;
+            color: var(--muted);
+            font-size: 16px;
+        }
+
         .meta {
             display: flex;
             flex-wrap: wrap;
@@ -591,7 +613,7 @@
             <div class="nav-links">
                 <a href="#engineering">Engineering</a>
                 <a href="#experience">Experience</a>
-                <a href="#research">Research</a>
+                <a href="#portfolio">Portfolio</a>
                 <a href="#recognition">Recognition</a>
                 <a href="#contact">Contact</a>
                 <a class="button" href="Jeongmin_Kim_Resume_2026.pdf" target="_blank" rel="noreferrer">CV</a>
@@ -613,7 +635,7 @@
                     </p>
                     <div class="hero-actions">
                         <a class="button dark" href="#engineering">Engineering scope</a>
-                        <a class="button" href="#research">Research work</a>
+                        <a class="button" href="#portfolio">Portfolio</a>
                         <a class="button" href="https://github.com/appff" target="_blank" rel="noreferrer">GitHub</a>
                         <a class="button" href="https://www.linkedin.com/in/jeongmin-kim-a875b1139/" target="_blank" rel="noreferrer">LinkedIn</a>
                         <a class="button" href="mailto:appff13@gmail.com">Email</a>
@@ -687,16 +709,16 @@
                         </div>
                     </article>
                     <article class="card amber">
-                        <h3>AI-Enabled Engineering Systems</h3>
+                        <h3>Dobby: AI Coding Agent</h3>
                         <p>
-                            Built and led AI-enabled systems for Solidity engineering, security analysis, monitoring,
-                            operational response, code generation, task automation, and internal developer productivity.
+                            Led an internal Solidity AI coding agent and chat assistant for development workflows,
+                            deployment support, smart-contract security analysis, and developer productivity.
                         </p>
                         <div class="meta">
                             <span class="tag">Dobby</span>
+                            <span class="tag">AI coding agent</span>
                             <span class="tag">Watchtower</span>
-                            <span class="tag">NightShift</span>
-                            <span class="tag">Security AI</span>
+                            <span class="tag">Security analysis</span>
                         </div>
                     </article>
                 </div>
@@ -716,7 +738,7 @@
                     <article class="role">
                         <div class="role-date">Oct 2022 - Present</div>
                         <div>
-                            <h3>Software Development Group Manager, CTO Staff - PiLab / Bifrost</h3>
+                            <h3>Technical Lead Manager / Software Development Group Manager, CTO Staff - PiLab / Bifrost</h3>
                             <p>
                                 Lead network and blockchain development across architecture, engineering execution, and
                                 schedule coordination for EVM-compatible components, CCCP V2, Bifrost Bridge, native
@@ -749,177 +771,176 @@
             </div>
         </section>
 
-        <section id="research">
+        <section class="band" id="portfolio">
             <div class="shell">
                 <div class="section-head">
-                    <h2>Academic &amp; Research Work</h2>
+                    <h2>Research &amp; Engineering Portfolio</h2>
                     <p>
-                        Academic work is presented as supporting evidence for technical depth: peer-reviewed systems
-                        research, public datasets, technical reports, and applied security measurement work.
+                        A consolidated view of peer-reviewed research, public artifacts, and production engineering
+                        systems. The goal is to show both academic depth and technical leadership across shipped systems.
                     </p>
                 </div>
-                <div class="list">
-                    <article class="paper">
-                        <div>
-                            <div class="paper-title">
-                                <a href="https://ieeexplore.ieee.org/document/9259352/" target="_blank" rel="noreferrer">Lumos: Improving Smart Home IoT Visibility and Interoperability Through Analyzing Mobile Apps</a>
-                            </div>
-                            <div class="paper-authors">Jeongmin Kim, Steven Y. Ko, Sooel Son, Dongsu Han</div>
-                            <div class="paper-venue">IEEE ICNP 2020</div>
-                        </div>
-                        <div class="paper-note">First author<br>Acceptance rate 16.3%</div>
-                    </article>
-                    <article class="paper">
-                        <div>
-                            <div class="paper-title">
-                                <a href="https://dl.acm.org/doi/10.1145/3281411.3281416" target="_blank" rel="noreferrer">APPx: An Automated App Acceleration Framework for Low Latency Mobile App</a>
-                            </div>
-                            <div class="paper-authors">Byungkwon Choi, Jeongmin Kim, Daeyang Cho, Seongmin Kim, Dongsu Han</div>
-                            <div class="paper-venue">ACM CoNEXT 2018</div>
-                        </div>
-                        <div class="paper-note">Second author<br>Acceptance rate 19.7%</div>
-                    </article>
-                    <article class="paper">
-                        <div>
-                            <div class="paper-title">
-                                <a href="https://dl.acm.org/doi/10.1145/2999572.2999596" target="_blank" rel="noreferrer">Extractocol: Enabling Automatic Protocol Behavior Analysis for Android Applications</a>
-                            </div>
-                            <div class="paper-authors">Jeongmin Kim, Hyunwoo Choi, Hun Namkung, Woohyun Choi, Byungkwon Choi, Hyunwook Hong, Yongdae Kim, Jonghyup Lee, Dongsu Han</div>
-                            <div class="paper-venue">ACM CoNEXT 2016</div>
-                        </div>
-                        <div class="paper-note">Co-first author<br>Acceptance rate 18.4%</div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects">
-            <div class="shell">
-                <div class="section-head">
-                    <h2>Public Work</h2>
-                    <p>
-                        Public repositories, reports, datasets, and peer-reviewed artifacts that can be shared directly.
-                        Internal systems remain represented by project summaries rather than source links.
+                <div class="portfolio-block">
+                    <h3 class="portfolio-title">Academic Research</h3>
+                    <p class="portfolio-intro">
+                        Peer-reviewed systems research in network behavior analysis, IoT interoperability, and mobile
+                        application acceleration.
                     </p>
-                </div>
-                <div class="grid-2">
-                    <article class="card highlight">
-                        <h3>RegTechBench</h3>
-                        <p>
-                            Evidence-aware benchmark package for blockchain regulatory monitoring, built around six
-                            workload families and deterministic reference checks. The current report describes 413,531
-                            transaction-like entries, 384 delayed or incorrect external-risk summaries, and 3.38M
-                            same-token NFT back-and-forth matches.
-                        </p>
-                        <div class="meta">
-                            <a class="tag" href="https://github.com/appff/RegTechBench" target="_blank" rel="noreferrer">GitHub</a>
-                            <a class="tag" href="https://github.com/appff/RegTechBench/blob/main/RegTechBench.pdf" target="_blank" rel="noreferrer">Report PDF</a>
-                            <a class="doi-badge" href="https://doi.org/10.5281/zenodo.21211432" target="_blank" rel="noreferrer" aria-label="RegTechBench Zenodo DOI 10.5281/zenodo.21211432">
-                                <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.21211432.svg" alt="DOI 10.5281/zenodo.21211432">
-                            </a>
-                        </div>
-                    </article>
-                    <article class="card red">
-                        <h3>Evanesca</h3>
-                        <p>
-                            Measuring DeFi attack playbooks at scale. This line of work is being prepared as public
-                            code plus a technical report, without claiming an accepted conference publication.
-                        </p>
-                        <div class="meta">
-                            <a class="tag" href="https://github.com/appff/Evanesca_public" target="_blank" rel="noreferrer">GitHub</a>
-                            <span class="tag">Technical report planned</span>
-                        </div>
-                    </article>
-                </div>
-                <div class="repo-list" aria-label="Repository links">
-                    <div class="repo">
-                        <div>
-                            <strong>Extractocol</strong>
-                            <span>Automatic protocol behavior analysis for Android applications, published at ACM CoNEXT 2016.</span>
-                        </div>
-                        <a class="button" href="https://dl.acm.org/doi/10.1145/2999572.2999596" target="_blank" rel="noreferrer">Paper</a>
+                    <div class="list">
+                        <article class="paper">
+                            <div>
+                                <div class="paper-title">
+                                    <a href="https://ieeexplore.ieee.org/document/9259352/" target="_blank" rel="noreferrer">Lumos: Improving Smart Home IoT Visibility and Interoperability Through Analyzing Mobile Apps</a>
+                                </div>
+                                <div class="paper-authors">Jeongmin Kim, Steven Y. Ko, Sooel Son, Dongsu Han</div>
+                                <div class="paper-venue">IEEE ICNP 2020</div>
+                            </div>
+                            <div class="paper-note">First author<br>Acceptance rate 16.3%</div>
+                        </article>
+                        <article class="paper">
+                            <div>
+                                <div class="paper-title">
+                                    <a href="https://dl.acm.org/doi/10.1145/3281411.3281416" target="_blank" rel="noreferrer">APPx: An Automated App Acceleration Framework for Low Latency Mobile App</a>
+                                </div>
+                                <div class="paper-authors">Byungkwon Choi, Jeongmin Kim, Daeyang Cho, Seongmin Kim, Dongsu Han</div>
+                                <div class="paper-venue">ACM CoNEXT 2018</div>
+                            </div>
+                            <div class="paper-note">Second author<br>Acceptance rate 19.7%</div>
+                        </article>
+                        <article class="paper">
+                            <div>
+                                <div class="paper-title">
+                                    <a href="https://dl.acm.org/doi/10.1145/2999572.2999596" target="_blank" rel="noreferrer">Extractocol: Enabling Automatic Protocol Behavior Analysis for Android Applications</a>
+                                </div>
+                                <div class="paper-authors">Jeongmin Kim, Hyunwoo Choi, Hun Namkung, Woohyun Choi, Byungkwon Choi, Hyunwook Hong, Yongdae Kim, Jonghyup Lee, Dongsu Han</div>
+                                <div class="paper-venue">ACM CoNEXT 2016</div>
+                            </div>
+                            <div class="paper-note">Co-first author<br>Acceptance rate 18.4%</div>
+                        </article>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <section class="band" id="reports">
-            <div class="shell">
-                <div class="section-head">
-                    <h2>Technical Reports Pipeline</h2>
-                    <p>
-                        Technical writeups are prepared in two tracks: public summaries where appropriate, and
-                        limited-disclosure internal briefs for security-sensitive systems. Security-sensitive
-                        operational details are not published on the site.
+                <div class="portfolio-block">
+                    <h3 class="portfolio-title">Open Research Artifacts</h3>
+                    <p class="portfolio-intro">
+                        Public datasets, reports, and shareable research artifacts that make the security and compliance
+                        work inspectable.
                     </p>
+                    <div class="grid-2">
+                        <article class="card highlight">
+                            <h3>RegTechBench</h3>
+                            <p>
+                                Evidence-aware benchmark package for blockchain regulatory monitoring, built around six
+                                workload families and deterministic reference checks. The current report describes 413,531
+                                transaction-like entries, 384 delayed or incorrect external-risk summaries, and 3.38M
+                                same-token NFT back-and-forth matches.
+                            </p>
+                            <div class="meta">
+                                <a class="tag" href="https://github.com/appff/RegTechBench" target="_blank" rel="noreferrer">GitHub</a>
+                                <a class="tag" href="https://github.com/appff/RegTechBench/blob/main/RegTechBench.pdf" target="_blank" rel="noreferrer">Report PDF</a>
+                                <a class="doi-badge" href="https://doi.org/10.5281/zenodo.21211432" target="_blank" rel="noreferrer" aria-label="RegTechBench Zenodo DOI 10.5281/zenodo.21211432">
+                                    <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.21211432.svg" alt="DOI 10.5281/zenodo.21211432">
+                                </a>
+                            </div>
+                        </article>
+                        <article class="card red">
+                            <h3>Evanesca</h3>
+                            <p>
+                                Measuring DeFi attack playbooks at scale. This line of work is being prepared as public
+                                code plus a technical report, without claiming an accepted conference publication.
+                            </p>
+                            <div class="meta">
+                                <a class="tag" href="https://github.com/appff/Evanesca_public" target="_blank" rel="noreferrer">GitHub</a>
+                                <span class="tag">Technical report planned</span>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="repo-list" aria-label="Repository links">
+                        <div class="repo">
+                            <div>
+                                <strong>Extractocol</strong>
+                                <span>Automatic protocol behavior analysis for Android applications, published at ACM CoNEXT 2016.</span>
+                            </div>
+                            <a class="button" href="https://dl.acm.org/doi/10.1145/2999572.2999596" target="_blank" rel="noreferrer">Paper</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="grid-3">
-                    <article class="card">
-                        <h3>APOL</h3>
-                        <p>
-                            Adaptive Policy Orchestration Layer for programmable compliance and real-world-asset
-                            tokenization. RegTechBench is the supporting benchmark work for APOL evaluation.
-                        </p>
-                        <div class="meta">
-                            <span class="tag">Public report planned</span>
-                            <span class="tag">Manuscript in preparation</span>
-                        </div>
-                    </article>
-                    <article class="card">
-                        <h3>BRP</h3>
-                        <p>
-                            Blockchain relaying and protocol infrastructure work. Public whitepaper release remains
-                            limited due to security-sensitive operational details.
-                        </p>
-                        <div class="meta">
-                            <span class="tag">Limited disclosure</span>
-                        </div>
-                    </article>
-                    <article class="card">
-                        <h3>Watchtower</h3>
-                        <p>
-                            AI-enabled monitoring, risk detection, and operational response system for blockchain and
-                            DeFi infrastructure. Public-safe summary material is planned; deeper technical details remain
-                            limited disclosure.
-                        </p>
-                        <div class="meta">
-                            <span class="tag">AI-enabled</span>
-                            <span class="tag">Limited disclosure</span>
-                        </div>
-                    </article>
-                    <article class="card">
-                        <h3>Smart Executor</h3>
-                        <p>
-                            DeFi multi-transaction execution, smart-contract execution analysis, and developer tooling.
-                            Public-safe summary material is planned; confidential details remain limited disclosure.
-                        </p>
-                        <div class="meta">
-                            <span class="tag">Public summary planned</span>
-                            <span class="tag">Limited disclosure</span>
-                        </div>
-                    </article>
-                    <article class="card">
-                        <h3>BNS</h3>
-                        <p>
-                            Bifrost Name Service writeup for naming, identity, and service-layer infrastructure in the
-                            Bifrost ecosystem. Public-safe summary material is planned.
-                        </p>
-                        <div class="meta">
-                            <span class="tag">Public summary planned</span>
-                        </div>
-                    </article>
-                    <article class="card">
-                        <h3>Dobby</h3>
-                        <p>
-                            Internal Solidity AI coding agent and chat assistant for development workflows, deployment
-                            support, and smart-contract security analysis. Technical details remain limited disclosure.
-                        </p>
-                        <div class="meta">
-                            <span class="tag">AI-enabled</span>
-                            <span class="tag">Limited disclosure</span>
-                            <span class="tag">Internal system</span>
-                        </div>
-                    </article>
+
+                <div class="portfolio-block">
+                    <h3 class="portfolio-title">Engineering Systems</h3>
+                    <p class="portfolio-intro">
+                        Production and applied-research systems being written up as public summaries or
+                        limited-disclosure internal briefs. Security-sensitive operational details are not published.
+                    </p>
+                    <div class="grid-3">
+                        <article class="card amber">
+                            <h3>Dobby</h3>
+                            <p>
+                                Internal Solidity AI coding agent and chat assistant for development workflows, deployment
+                                support, and smart-contract security analysis. Technical details remain limited disclosure.
+                            </p>
+                            <div class="meta">
+                                <span class="tag">AI-enabled</span>
+                                <span class="tag">AI coding agent</span>
+                                <span class="tag">Limited disclosure</span>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <h3>APOL</h3>
+                            <p>
+                                Adaptive Policy Orchestration Layer for programmable compliance and real-world-asset
+                                tokenization. RegTechBench is the supporting benchmark work for APOL evaluation.
+                            </p>
+                            <div class="meta">
+                                <span class="tag">Public report planned</span>
+                                <span class="tag">Manuscript in preparation</span>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <h3>Watchtower</h3>
+                            <p>
+                                AI-enabled monitoring, risk detection, and operational response system for blockchain and
+                                DeFi infrastructure. Public-safe summary material is planned; deeper technical details
+                                remain limited disclosure.
+                            </p>
+                            <div class="meta">
+                                <span class="tag">AI-enabled</span>
+                                <span class="tag">Limited disclosure</span>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <h3>BRP</h3>
+                            <p>
+                                Blockchain relaying and protocol infrastructure work. Public whitepaper release remains
+                                limited due to security-sensitive operational details.
+                            </p>
+                            <div class="meta">
+                                <span class="tag">Limited disclosure</span>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <h3>Smart Executor</h3>
+                            <p>
+                                DeFi multi-transaction execution, smart-contract execution analysis, and developer
+                                tooling. Public-safe summary material is planned; confidential details remain limited
+                                disclosure.
+                            </p>
+                            <div class="meta">
+                                <span class="tag">Public summary planned</span>
+                                <span class="tag">Limited disclosure</span>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <h3>BNS</h3>
+                            <p>
+                                Bifrost Name Service writeup for naming, identity, and service-layer infrastructure in
+                                the Bifrost ecosystem. Public-safe summary material is planned.
+                            </p>
+                            <div class="meta">
+                                <span class="tag">Public summary planned</span>
+                            </div>
+                        </article>
+                    </div>
                 </div>
             </div>
         </section>
