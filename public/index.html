@@ -340,6 +340,16 @@
             color: var(--muted);
         }
 
+        .card-list {
+            margin: 12px 0 0;
+            padding-left: 20px;
+            color: var(--muted);
+        }
+
+        .card-list li {
+            margin: 8px 0;
+        }
+
         .meta {
             display: flex;
             flex-wrap: wrap;
@@ -929,10 +939,12 @@
                 <div class="grid-3">
                     <article class="card cyan">
                         <h3>Fellowships and Grants</h3>
-                        <p>
-                            Global Fellowship from the National Research Foundation of Korea, Iljun Fellowship,
-                            ACM SIGCOMM Travel Grant, and ACM CoNEXT Travel Grants.
-                        </p>
+                        <ul class="card-list">
+                            <li>Global Fellowship, National Research Foundation of Korea.</li>
+                            <li>Iljun Fellowship.</li>
+                            <li>ACM SIGCOMM Travel Grant.</li>
+                            <li>ACM CoNEXT Travel Grants.</li>
+                        </ul>
                     </article>
                     <article class="card amber">
                         <h3>MSRA Collaboration</h3>
@@ -950,11 +962,10 @@
                     </article>
                     <article class="card cyan">
                         <h3>National R&amp;D Evaluation</h3>
-                        <p>
-                            Evaluation committee member for Korean national R&amp;D programs, including the March 2026
-                            selection evaluation for a dark-web and virtual-asset drug-investigation system, and the
-                            Korean National Police Agency's 2026 field-tailored policing R&amp;D program, Police Lab 3.0.
-                        </p>
+                        <ul class="card-list">
+                            <li>Evaluation committee member, March 2026 selection evaluation for a dark-web and virtual-asset drug-investigation system.</li>
+                            <li>Evaluation committee member, Korean National Police Agency's 2026 field-tailored policing R&amp;D program, Police Lab 3.0.</li>
+                        </ul>
                     </article>
                 </div>
             </div>
