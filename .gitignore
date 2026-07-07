@@ -3,3 +3,5 @@ node_modules
 *.pages
 docs/assets/brp-litepaper.pdf
 docs/assets/smart-executor-technical-report.pdf
+public/assets/brp-litepaper.pdf
+public/assets/smart-executor-technical-report.pdf
