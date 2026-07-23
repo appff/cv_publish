@@ -415,7 +415,7 @@
             height: 100%;
             min-height: 286px;
             display: block;
-            object-fit: cover;
+            object-fit: contain;
             object-position: center;
         }
 
@@ -589,6 +589,42 @@
             font-size: 16px;
         }
 
+        .system-group {
+            margin-top: 30px;
+        }
+
+        .system-group + .system-group {
+            padding-top: 30px;
+            border-top: 1px solid var(--line);
+        }
+
+        .system-group-head {
+            display: grid;
+            grid-template-columns: 0.7fr 1.3fr;
+            gap: 48px;
+            align-items: start;
+            margin-bottom: 16px;
+        }
+
+        .system-group-head h4 {
+            margin: 0;
+            font-size: 19px;
+            line-height: 1.15;
+        }
+
+        .system-group-head p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .system-card h5 {
+            margin: 0;
+            font-size: 20px;
+            line-height: 1.08;
+            letter-spacing: 0;
+        }
+
         .meta {
             display: flex;
             flex-wrap: wrap;
@@ -656,6 +692,26 @@
             color: #244b51;
             font-size: 13px;
             font-weight: 740;
+        }
+
+        .venue-badge {
+            display: block;
+            width: fit-content;
+            margin-bottom: 8px;
+            padding: 3px 7px;
+            border: 1px solid var(--coal);
+            border-radius: 4px;
+            background: var(--coal);
+            color: #ffffff;
+            font-size: 10px;
+            line-height: 1.4;
+            text-transform: uppercase;
+        }
+
+        .venue-badge.selective {
+            border-color: rgba(29, 143, 159, 0.4);
+            background: transparent;
+            color: var(--cyan);
         }
 
         .timeline {
@@ -804,8 +860,13 @@
             .grid-3,
             .grid-2,
             .case-grid,
-            .section-head {
+            .section-head,
+            .system-group-head {
                 grid-template-columns: 1fr;
+            }
+
+            .system-group-head {
+                gap: 10px;
             }
 
             .case-card-body {
@@ -1194,7 +1255,7 @@
                         </div>
                     </div>
                     <div class="featured-project-visual">
-                        <img src="https://evanesca-front.vercel.app/landing/evanesca-hero-still.jpg" alt="Evanesca interface showing a reconstructed DeFi transaction graph" width="1600" height="900">
+                        <img src="assets/evanesca-showcase.png" alt="Evanesca interface showing financial behavior reconstruction and constraint evaluation" width="2754" height="1442">
                     </div>
                 </article>
                 <div class="portfolio-block">
@@ -1212,7 +1273,10 @@
                                 <div class="paper-authors">Jeongmin Kim, Steven Y. Ko, Sooel Son, Dongsu Han</div>
                                 <div class="paper-venue">IEEE ICNP 2020</div>
                             </div>
-                            <div class="paper-note">First author<br>Acceptance rate 16.3%</div>
+                            <div class="paper-note">
+                                <span class="venue-badge selective">Highly Selective</span>
+                                First author<br>Acceptance rate 16.3%
+                            </div>
                         </article>
                         <article class="paper">
                             <div>
@@ -1222,7 +1286,10 @@
                                 <div class="paper-authors">Byungkwon Choi, Jeongmin Kim, Daeyang Cho, Seongmin Kim, Dongsu Han</div>
                                 <div class="paper-venue">ACM CoNEXT 2018</div>
                             </div>
-                            <div class="paper-note">Second author<br>Acceptance rate 19.7%</div>
+                            <div class="paper-note">
+                                <span class="venue-badge">Top-tier Conference</span>
+                                Second author<br>Acceptance rate 19.7%
+                            </div>
                         </article>
                         <article class="paper">
                             <div>
@@ -1232,7 +1299,10 @@
                                 <div class="paper-authors">Jeongmin Kim, Hyunwoo Choi, Hun Namkung, Woohyun Choi, Byungkwon Choi, Hyunwook Hong, Yongdae Kim, Jonghyup Lee, Dongsu Han</div>
                                 <div class="paper-venue">ACM CoNEXT 2016</div>
                             </div>
-                            <div class="paper-note">Co-first author<br>Acceptance rate 18.4%</div>
+                            <div class="paper-note">
+                                <span class="venue-badge">Top-tier Conference</span>
+                                Co-first author<br>Acceptance rate 18.4%
+                            </div>
                         </article>
                     </div>
                 </div>
@@ -1295,110 +1365,144 @@
                         protocol infrastructure, and DeFi products. Security-sensitive operational details remain
                         limited disclosure.
                     </p>
-                    <div class="grid-3">
-                        <article class="card amber">
-                            <h3>Dobby</h3>
+                    <div class="system-group">
+                        <div class="system-group-head">
+                            <h4>AI-Enabled Engineering</h4>
                             <p>
-                                Internal Solidity AI coding agent and chat assistant for development workflows, deployment
-                                support, and smart-contract security analysis.
+                                AI-assisted systems for software delivery, autonomous engineering workflows, and
+                                blockchain operations.
                             </p>
-                            <div class="meta">
-                                <a class="tag" href="assets/dobby-technical-report.pdf" target="_blank" rel="noreferrer">Report PDF</a>
-                                <span class="tag">AI Coding Agent</span>
-                            </div>
-                        </article>
-                        <article class="card highlight" id="nightshift">
-                            <h3>NightShift</h3>
+                        </div>
+                        <div class="grid-3">
+                            <article class="card amber system-card">
+                                <h5>Dobby</h5>
+                                <p>
+                                    Internal Solidity AI coding agent and chat assistant for development workflows,
+                                    deployment support, and smart-contract security analysis.
+                                </p>
+                                <div class="meta">
+                                    <a class="tag" href="assets/dobby-technical-report.pdf" target="_blank" rel="noreferrer">Report PDF</a>
+                                    <span class="tag">AI Coding Agent</span>
+                                </div>
+                            </article>
+                            <article class="card highlight system-card" id="nightshift">
+                                <h5>NightShift</h5>
+                                <p>
+                                    Open-source CLI-native autonomous agent orchestrator for software engineering tasks,
+                                    built around an auditor/worker loop, evidence-based completion checks, MCP support,
+                                    and git safety checkpoints.
+                                </p>
+                                <div class="meta">
+                                    <a class="tag" href="https://github.com/appff/NightShift" target="_blank" rel="noreferrer">GitHub</a>
+                                    <span class="tag">Agent Orchestration</span>
+                                    <span class="tag">Verification Loop</span>
+                                </div>
+                            </article>
+                            <article class="card cyan system-card">
+                                <h5>Watchtower</h5>
+                                <p>
+                                    AI-enabled monitoring, risk detection, and operational response system for blockchain
+                                    and DeFi infrastructure. The public technical report documents its architecture and
+                                    operational model.
+                                </p>
+                                <div class="meta">
+                                    <a class="tag" href="assets/watchtower-technical-report.pdf" target="_blank" rel="noreferrer">Report PDF</a>
+                                    <span class="tag">AI Monitoring</span>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="system-group">
+                        <div class="system-group-head">
+                            <h4>Protocol Infrastructure</h4>
                             <p>
-                                Open-source CLI-native autonomous agent orchestrator for software engineering tasks, built
-                                around an auditor/worker loop, evidence-based completion checks, MCP support, and git
-                                safety checkpoints.
+                                Core infrastructure for native Bitcoin relaying, naming and identity, and cross-chain
+                                asset movement.
                             </p>
-                            <div class="meta">
-                                <a class="tag" href="https://github.com/appff/NightShift" target="_blank" rel="noreferrer">GitHub</a>
-                                <span class="tag">Agent Orchestration</span>
-                                <span class="tag">Verification Loop</span>
-                            </div>
-                        </article>
-                        <article class="card cyan">
-                            <h3>Watchtower</h3>
+                        </div>
+                        <div class="grid-3">
+                            <article class="card red system-card" id="brp">
+                                <h5>Bitcoin Relaying Protocol</h5>
+                                <p>
+                                    Bitcoin relay protocol infrastructure work for native Bitcoin relaying. Technical
+                                    details remain limited disclosure due to security-sensitive operational details.
+                                </p>
+                                <div class="meta">
+                                    <span class="tag">Limited Disclosure</span>
+                                </div>
+                            </article>
+                            <article class="card highlight system-card" id="bns">
+                                <h5>Bifrost Name Service</h5>
+                                <p>
+                                    Bifrost Name Service writeup for naming, identity, and service-layer infrastructure
+                                    in the Bifrost ecosystem.
+                                </p>
+                                <div class="meta">
+                                    <a class="tag" href="assets/bifrost-name-service-technical-report.pdf" target="_blank" rel="noreferrer">Report PDF</a>
+                                    <span class="tag">Name Service Infrastructure</span>
+                                </div>
+                            </article>
+                            <article class="card cyan system-card" id="crosschain-asset-bridge">
+                                <h5>Crosschain Asset Bridge</h5>
+                                <p>
+                                    Cross-chain asset bridge integration and operations work connected to Bifrost
+                                    Network architecture and production DeFi flows.
+                                </p>
+                                <div class="meta">
+                                    <a class="tag" href="https://bifrostnetwork.com/bridge" target="_blank" rel="noreferrer">Bridge App</a>
+                                    <a class="tag" href="https://docs.bifrostnetwork.com/bifrost-network/bifrost-network-architecture" target="_blank" rel="noreferrer">Architecture Docs</a>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="system-group">
+                        <div class="system-group-head">
+                            <h4>DeFi Product Systems</h4>
                             <p>
-                                AI-enabled monitoring, risk detection, and operational response system for blockchain and
-                                DeFi infrastructure. The public technical report documents its architecture and
-                                operational model.
+                                Product-facing systems for multi-action execution, decentralized exchange, and
+                                Bitcoin-backed lending.
                             </p>
-                            <div class="meta">
-                                <a class="tag" href="assets/watchtower-technical-report.pdf" target="_blank" rel="noreferrer">Report PDF</a>
-                                <span class="tag">AI Monitoring</span>
-                            </div>
-                        </article>
-                        <article class="card red" id="brp">
-                            <h3>Bitcoin Relaying Protocol</h3>
-                            <p>
-                                Bitcoin relay protocol infrastructure work for native Bitcoin relaying. Technical details
-                                remain limited disclosure due to security-sensitive operational details.
-                            </p>
-                            <div class="meta">
-                                <span class="tag">Limited Disclosure</span>
-                            </div>
-                        </article>
-                        <article class="card highlight" id="smart-executor">
-                            <h3>Smart Executor</h3>
-                            <p>
-                                DeFi multi-transaction execution, smart-contract execution analysis, and developer
-                                tooling. Technical details remain limited disclosure.
-                            </p>
-                            <div class="meta">
-                                <span class="tag">Limited Disclosure</span>
-                                <span class="tag">DeFi Multi-Action Execution</span>
-                            </div>
-                        </article>
-                        <article class="card highlight" id="bns">
-                            <h3>Bifrost Name Service</h3>
-                            <p>
-                                Bifrost Name Service writeup for naming, identity, and service-layer infrastructure in
-                                the Bifrost ecosystem.
-                            </p>
-                            <div class="meta">
-                                <a class="tag" href="assets/bifrost-name-service-technical-report.pdf" target="_blank" rel="noreferrer">Report PDF</a>
-                                <span class="tag">Name Service Infrastructure</span>
-                            </div>
-                        </article>
-                        <article class="card cyan" id="dex">
-                            <h3>Everdex</h3>
-                            <p>
-                                Everdex-related engineering work across DeFi product scope, implementation planning,
-                                release coordination, and technical tradeoff management. Connected product delivery with
-                                internal execution infrastructure such as <a href="#smart-executor">Smart Executor</a>.
-                            </p>
-                            <div class="meta">
-                                <a class="tag" href="https://www.everdex.app/ko" target="_blank" rel="noreferrer">Everdex App</a>
-                                <span class="tag">DEX</span>
-                            </div>
-                        </article>
-                        <article class="card highlight" id="lending">
-                            <h3>BTCFi V2</h3>
-                            <p>
-                                BTCFi-related engineering work for lending-oriented DeFi product scope, implementation
-                                planning, and delivery coordination. Connected product delivery with
-                                <a href="#smart-executor">Smart Executor</a> execution flows and <a href="#brp">Bitcoin
-                                relay components</a>.
-                            </p>
-                            <div class="meta">
-                                <span class="tag">Lending</span>
-                            </div>
-                        </article>
-                        <article class="card cyan" id="crosschain-asset-bridge">
-                            <h3>Crosschain Asset Bridge</h3>
-                            <p>
-                                Cross-chain asset bridge integration and operations work connected to Bifrost Network
-                                architecture and production DeFi flows.
-                            </p>
-                            <div class="meta">
-                                <a class="tag" href="https://bifrostnetwork.com/bridge" target="_blank" rel="noreferrer">Bridge App</a>
-                                <a class="tag" href="https://docs.bifrostnetwork.com/bifrost-network/bifrost-network-architecture" target="_blank" rel="noreferrer">Architecture Docs</a>
-                            </div>
-                        </article>
+                        </div>
+                        <div class="grid-3">
+                            <article class="card highlight system-card" id="smart-executor">
+                                <h5>Smart Executor</h5>
+                                <p>
+                                    DeFi multi-transaction execution, smart-contract execution analysis, and developer
+                                    tooling. Technical details remain limited disclosure.
+                                </p>
+                                <div class="meta">
+                                    <span class="tag">Limited Disclosure</span>
+                                    <span class="tag">DeFi Multi-Action Execution</span>
+                                </div>
+                            </article>
+                            <article class="card cyan system-card" id="dex">
+                                <h5>Everdex</h5>
+                                <p>
+                                    Everdex-related engineering work across DeFi product scope, implementation planning,
+                                    release coordination, and technical tradeoff management. Connected product delivery
+                                    with internal execution infrastructure such as <a href="#smart-executor">Smart
+                                    Executor</a>.
+                                </p>
+                                <div class="meta">
+                                    <a class="tag" href="https://www.everdex.app/ko" target="_blank" rel="noreferrer">Everdex App</a>
+                                    <span class="tag">DEX</span>
+                                </div>
+                            </article>
+                            <article class="card highlight system-card" id="lending">
+                                <h5>BTCFi V2</h5>
+                                <p>
+                                    BTCFi-related engineering work for lending-oriented DeFi product scope,
+                                    implementation planning, and delivery coordination. Connected product delivery with
+                                    <a href="#smart-executor">Smart Executor</a> execution flows and
+                                    <a href="#brp">Bitcoin relay components</a>.
+                                </p>
+                                <div class="meta">
+                                    <span class="tag">Lending</span>
+                                </div>
+                            </article>
+                        </div>
                     </div>
                 </div>
             </div>
