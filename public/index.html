@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Jeongmin Kim, Ph.D. - technical lead manager working on blockchain infrastructure, DeFi systems, blockchain security, and AI-enabled developer tools.">
+    <meta name="description" content="Jeongmin Kim, Ph.D. - technical lead manager and product owner connecting blockchain research, engineering strategy, and product delivery.">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <title>Jeongmin Kim - Technical Lead Manager</title>
     <style>
@@ -339,6 +339,119 @@
             border-top: 4px solid var(--red);
         }
 
+        .leadership-section {
+            background: #eef3f0;
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .case-card {
+            position: relative;
+            min-width: 0;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--panel);
+            transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+        }
+
+        .case-card:hover,
+        .case-card:focus-within {
+            border-color: rgba(29, 143, 159, 0.5);
+            box-shadow: var(--shadow);
+            transform: translateY(-3px);
+        }
+
+        .case-cover {
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            border-bottom: 1px solid var(--line);
+            background: #e8ecea;
+        }
+
+        .case-cover img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .case-card-body {
+            display: flex;
+            min-height: 470px;
+            flex-direction: column;
+            padding: 22px;
+        }
+
+        .case-index,
+        .case-label {
+            color: var(--green);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .case-card h3 {
+            margin-top: 8px;
+            font-size: 24px;
+        }
+
+        .case-role {
+            margin-top: 9px;
+            color: #2c3942;
+            font-size: 13px;
+            font-weight: 760;
+        }
+
+        .case-summary {
+            margin: 16px 0 0;
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        .case-card-group {
+            margin-top: 20px;
+        }
+
+        .case-card-group .meta {
+            margin-top: 8px;
+        }
+
+        .case-card-actions {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            margin-top: auto;
+            padding-top: 24px;
+        }
+
+        .case-card-primary::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+        }
+
+        .case-card-actions .button {
+            min-height: 38px;
+            padding: 8px 12px;
+            font-size: 13px;
+        }
+
+        .case-card-actions .presentation-link {
+            position: relative;
+            z-index: 3;
+        }
+
         .card h3 {
             font-size: 20px;
         }
@@ -594,8 +707,13 @@
             .stat-grid,
             .grid-3,
             .grid-2,
+            .case-grid,
             .section-head {
                 grid-template-columns: 1fr;
+            }
+
+            .case-card-body {
+                min-height: 0;
             }
 
             .paper,
@@ -653,6 +771,7 @@
             <a class="brand" href="#top">Jeongmin Kim</a>
             <div class="nav-links">
                 <a href="#engineering">Engineering</a>
+                <a href="#product-engineering-leadership">Leadership</a>
                 <a href="#experience">Experience</a>
                 <a href="#portfolio">Portfolio</a>
                 <a href="#recognition">Recognition</a>
@@ -666,16 +785,16 @@
         <section class="hero" aria-label="Intro">
             <div class="shell hero-grid">
                 <div>
-                    <p class="eyebrow">Technical Lead Manager - Blockchain - AI Systems</p>
-                    <h1 class="desktop-title">Leading blockchain infrastructure, DeFi systems, and AI-enabled tools.</h1>
-                    <h1 class="mobile-title">Blockchain infrastructure.<br>DeFi systems.<br>AI-enabled tools.</h1>
+                    <p class="eyebrow">Technical Lead Manager - Product Owner - Blockchain Researcher</p>
+                    <h1 class="desktop-title">Turning technical vision into shipped blockchain products.</h1>
+                    <h1 class="mobile-title">Technical vision.<br>Product strategy.<br>Execution.</h1>
                     <p class="hero-copy">
-                        I lead network and blockchain development at PiLab / Bifrost, covering technical direction,
-                        implementation planning, and delivery coordination for infrastructure, DeFi products, security
-                        systems, and internal AI engineering tools.
+                        I connect research, product strategy, and engineering execution: defining technical direction,
+                        building roadmaps, aligning cross-functional teams, and delivering blockchain infrastructure,
+                        DeFi products, security systems, and AI-enabled engineering tools.
                     </p>
                     <div class="hero-actions">
-                        <a class="button dark" href="#engineering">Engineering scope</a>
+                        <a class="button dark" href="#product-engineering-leadership">Product &amp; engineering leadership</a>
                         <a class="button" href="#portfolio">Portfolio</a>
                         <a class="button" href="https://github.com/appff" target="_blank" rel="noreferrer">GitHub</a>
                         <a class="button" href="https://www.linkedin.com/in/jeongmin-kim-a875b1139/" target="_blank" rel="noreferrer">LinkedIn</a>
@@ -763,6 +882,134 @@
             </div>
         </section>
 
+        <section class="leadership-section" id="product-engineering-leadership">
+            <div class="shell">
+                <div class="section-head">
+                    <h2>Product &amp; Engineering Leadership</h2>
+                    <p>
+                        Selected leadership experiences turning business goals and technical ambiguity into product
+                        direction, cross-functional plans, and executable engineering decisions. Each story focuses on
+                        how I framed the problem, aligned teams, made tradeoffs, and moved complex blockchain work
+                        toward delivery.
+                    </p>
+                </div>
+                <div class="case-grid">
+                    <article class="case-card">
+                        <div class="case-cover">
+                            <img src="assets/leadership-btcfi-launch-cover.jpg" alt="Cover slide from the BTCFi launch strategy presentation" width="1440" height="810">
+                        </div>
+                        <div class="case-card-body">
+                            <span class="case-index">Leadership Experience 01</span>
+                            <h3>BTCFi Launch Strategy</h3>
+                            <div class="case-role">Technical Lead Manager / Product Owner</div>
+                            <p class="case-summary">
+                                Coordinated smart-contract, node, backend, frontend, infrastructure, design, and
+                                operations work through milestone planning, dependency management, release gates, and
+                                production rollout.
+                            </p>
+                            <div class="case-card-group">
+                                <span class="case-label">Leadership focus</span>
+                                <div class="meta">
+                                    <span class="tag">Product Strategy</span>
+                                    <span class="tag">Release Planning</span>
+                                    <span class="tag">Risk Management</span>
+                                    <span class="tag">Cross-functional Leadership</span>
+                                </div>
+                            </div>
+                            <div class="case-card-group">
+                                <span class="case-label">Systems</span>
+                                <div class="meta">
+                                    <span class="tag">Smart Contracts</span>
+                                    <span class="tag">Blockchain Nodes</span>
+                                    <span class="tag">Backend &amp; Frontend</span>
+                                    <span class="tag">Infrastructure</span>
+                                </div>
+                            </div>
+                            <div class="case-card-actions">
+                                <a class="button dark case-card-primary" href="case-studies/btcfi-launch-strategy.html">View Case Study</a>
+                                <a class="button presentation-link" href="assets/btcfi-launch-strategy.pdf" target="_blank" rel="noreferrer">Open Presentation</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="case-card">
+                        <div class="case-cover">
+                            <img src="assets/leadership-btcfi-ux-cover.jpg" alt="Cover slide from the BTCFi UX and UI redesign presentation" width="1440" height="810">
+                        </div>
+                        <div class="case-card-body">
+                            <span class="case-index">Leadership Experience 02</span>
+                            <h3>BTCFi Product &amp; UX Redesign</h3>
+                            <div class="case-role">Product Owner</div>
+                            <p class="case-summary">
+                                Reframed a DeFi interface redesign around product principles, evidence, user journeys,
+                                and cross-functional decision making rather than treating it as a visual refresh.
+                            </p>
+                            <div class="case-card-group">
+                                <span class="case-label">Leadership focus</span>
+                                <div class="meta">
+                                    <span class="tag">UX Strategy</span>
+                                    <span class="tag">Product Thinking</span>
+                                    <span class="tag">User Journey Design</span>
+                                    <span class="tag">Design Review</span>
+                                </div>
+                            </div>
+                            <div class="case-card-group">
+                                <span class="case-label">Methods &amp; systems</span>
+                                <div class="meta">
+                                    <span class="tag">IA Flowcharts</span>
+                                    <span class="tag">Concept Testing</span>
+                                    <span class="tag">Smart Executor</span>
+                                    <span class="tag">DeFi UX</span>
+                                </div>
+                            </div>
+                            <div class="case-card-actions">
+                                <a class="button dark case-card-primary" href="case-studies/btcfi-product-ux-redesign.html">View Case Study</a>
+                                <a class="button presentation-link" href="assets/btcfi-product-ux-redesign.pdf" target="_blank" rel="noreferrer">Open Presentation</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="case-card">
+                        <div class="case-cover">
+                            <img src="assets/leadership-network-roadmap-cover.jpg" alt="Cover slide from the 2024 Network Group roadmap presentation" width="1440" height="810">
+                        </div>
+                        <div class="case-card-body">
+                            <span class="case-index">Leadership Experience 03</span>
+                            <h3>2024 Network Group Strategy &amp; Roadmap</h3>
+                            <div class="case-role">Technical Lead Manager</div>
+                            <p class="case-summary">
+                                Built an annual technology strategy connecting infrastructure hardening, product
+                                launches, cross-chain capability, account abstraction, security, and developer-facing
+                                platforms.
+                            </p>
+                            <div class="case-card-group">
+                                <span class="case-label">Leadership focus</span>
+                                <div class="meta">
+                                    <span class="tag">Technical Vision</span>
+                                    <span class="tag">Engineering Strategy</span>
+                                    <span class="tag">Portfolio Management</span>
+                                    <span class="tag">Roadmap Planning</span>
+                                </div>
+                            </div>
+                            <div class="case-card-group">
+                                <span class="case-label">Technology portfolio</span>
+                                <div class="meta">
+                                    <span class="tag">Account Abstraction</span>
+                                    <span class="tag">Cross-chain</span>
+                                    <span class="tag">BTCFi</span>
+                                    <span class="tag">Security Systems</span>
+                                </div>
+                            </div>
+                            <div class="case-card-actions">
+                                <a class="button dark case-card-primary" href="case-studies/network-group-2024-roadmap.html">View Case Study</a>
+                                <a class="button presentation-link" href="assets/network-group-2024-roadmap.pdf" target="_blank" rel="noreferrer">Open Presentation</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
         <section class="band" id="experience">
             <div class="shell">
                 <div class="section-head">
@@ -825,8 +1072,8 @@
                 <div class="section-head">
                     <h2>Research &amp; Engineering Portfolio</h2>
                     <p>
-                        A consolidated view of peer-reviewed research, public artifacts, and production engineering
-                        systems. The goal is to show both academic depth and technical leadership across shipped systems.
+                        Peer-reviewed research, open artifacts, and production engineering systems spanning academic
+                        depth, applied research, and technical delivery.
                     </p>
                 </div>
                 <div class="portfolio-block">
@@ -879,8 +1126,8 @@
                         <article class="card red">
                             <h3>Evanesca</h3>
                             <p>
-                                Featured blockchain security work for measuring DeFi attack playbooks at scale,
-                                connecting attack trace analysis with risk monitoring and technical reporting.
+                                Blockchain security research for measuring DeFi attack playbooks at scale, connecting
+                                attack trace analysis with risk monitoring and technical reporting.
                             </p>
                             <div class="meta">
                                 <a class="tag" href="https://evanesca-front.vercel.app/" target="_blank" rel="noreferrer">Live Showcase</a>
@@ -899,7 +1146,7 @@
                             <div class="meta">
                                 <span class="tag">Programmable Compliance</span>
                                 <span class="tag">RWA Tokenization</span>
-                                <span class="tag">Public Report Planned</span>
+                                <span class="tag">Ongoing Research</span>
                             </div>
                         </article>
                         <article class="card highlight">
@@ -923,8 +1170,9 @@
                 <div class="portfolio-block" id="engineering-systems">
                     <h3 class="portfolio-title">Engineering Systems</h3>
                     <p class="portfolio-intro">
-                        Production and applied-research systems being written up as public summaries or
-                        limited-disclosure internal briefs. Security-sensitive operational details are not published.
+                        Production and applied-research systems across AI-assisted engineering, blockchain monitoring,
+                        protocol infrastructure, and DeFi products. Security-sensitive operational details remain
+                        limited disclosure.
                     </p>
                     <div class="grid-3">
                         <article class="card amber">
@@ -955,7 +1203,8 @@
                             <h3>Watchtower</h3>
                             <p>
                                 AI-enabled monitoring, risk detection, and operational response system for blockchain and
-                                DeFi infrastructure. Public technical report material is available for review.
+                                DeFi infrastructure. The public technical report documents its architecture and
+                                operational model.
                             </p>
                             <div class="meta">
                                 <a class="tag" href="assets/watchtower-technical-report.pdf" target="_blank" rel="noreferrer">Report PDF</a>
