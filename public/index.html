@@ -339,6 +339,10 @@
             border-top: 4px solid var(--red);
         }
 
+        .card[id] {
+            scroll-margin-top: 88px;
+        }
+
         .leadership-section {
             background: #eef3f0;
             border-top: 1px solid var(--line);
@@ -948,8 +952,8 @@
                         </p>
                         <div class="meta">
                             <span class="tag">CCCP V2</span>
-                            <span class="tag">Bitcoin Relay Protocol</span>
-                            <span class="tag">BNS</span>
+                            <a class="tag" href="#brp">Bitcoin Relay Protocol</a>
+                            <a class="tag" href="#bns">BNS</a>
                         </div>
                     </article>
                     <article class="card cyan">
@@ -1349,7 +1353,7 @@
                                 <span class="tag">DeFi Multi-Action Execution</span>
                             </div>
                         </article>
-                        <article class="card highlight">
+                        <article class="card highlight" id="bns">
                             <h3>BNS</h3>
                             <p>
                                 Bifrost Name Service writeup for naming, identity, and service-layer infrastructure in
