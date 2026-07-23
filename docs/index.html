@@ -345,6 +345,98 @@
             border-bottom: 1px solid var(--line);
         }
 
+        .featured-project {
+            display: grid;
+            grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+            gap: 30px;
+            align-items: stretch;
+            margin: 6px 0 34px;
+            padding: 14px;
+            border: 1px solid rgba(177, 75, 67, 0.3);
+            border-radius: 10px;
+            background: #fffaf9;
+            box-shadow: 0 12px 28px rgba(177, 75, 67, 0.08);
+        }
+
+        .featured-project-copy {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 26px 22px 26px 28px;
+        }
+
+        .featured-kicker {
+            color: var(--red);
+            font-size: 11px;
+            font-weight: 820;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .featured-project h3 {
+            margin-top: 10px;
+            font-size: clamp(26px, 3vw, 36px);
+        }
+
+        .featured-project-copy p {
+            max-width: 520px;
+            margin: 16px 0 0;
+            color: var(--muted);
+            font-size: 16px;
+        }
+
+        .featured-project-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 22px;
+        }
+
+        .featured-project-actions .button {
+            min-height: 38px;
+            font-size: 13px;
+        }
+
+        .featured-project-visual {
+            min-height: 286px;
+            overflow: hidden;
+            border: 1px solid #343940;
+            border-radius: 8px;
+            background: #131417;
+            box-shadow: 0 10px 24px rgba(19, 20, 23, 0.18);
+        }
+
+        .featured-project-visual img {
+            width: 100%;
+            height: 100%;
+            min-height: 286px;
+            display: block;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .featured-artifact {
+            position: relative;
+            overflow: hidden;
+            border-color: rgba(177, 75, 67, 0.42);
+            background: #fffaf9;
+        }
+
+        .featured-artifact::before {
+            content: "Featured artifact";
+            position: absolute;
+            top: 16px;
+            right: -33px;
+            padding: 5px 36px;
+            color: #ffffff;
+            background: var(--red);
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transform: rotate(38deg);
+        }
+
         .case-grid {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -716,6 +808,14 @@
                 min-height: 0;
             }
 
+            .featured-project {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-project-copy {
+                padding: 18px 12px 10px;
+            }
+
             .paper,
             .role,
             .repo {
@@ -1076,6 +1176,23 @@
                         depth, applied research, and technical delivery.
                     </p>
                 </div>
+                <article class="featured-project" aria-labelledby="evanesca-feature-title">
+                    <div class="featured-project-copy">
+                        <span class="featured-kicker">Featured research system</span>
+                        <h3 id="evanesca-feature-title">Evanesca</h3>
+                        <p>
+                            A DeFi security research system that reconstructs attack playbooks as semantic financial
+                            graphs and replayable evidence. It is where research depth becomes an inspectable product.
+                        </p>
+                        <div class="featured-project-actions">
+                            <a class="button dark" href="https://evanesca-front.vercel.app/" target="_blank" rel="noreferrer">Open live showcase ↗</a>
+                            <a class="button" href="https://github.com/appff/Evanesca_public" target="_blank" rel="noreferrer">View repository</a>
+                        </div>
+                    </div>
+                    <div class="featured-project-visual">
+                        <img src="https://evanesca-front.vercel.app/landing/evanesca-hero-still.jpg" alt="Evanesca interface showing a reconstructed DeFi transaction graph" width="1600" height="900">
+                    </div>
+                </article>
                 <div class="portfolio-block">
                     <h3 class="portfolio-title">Academic Research</h3>
                     <p class="portfolio-intro">
@@ -1123,7 +1240,7 @@
                         programmable compliance, and benchmark artifacts that make the work inspectable.
                     </p>
                     <div class="grid-3">
-                        <article class="card red">
+                        <article class="card red featured-artifact">
                             <h3>Evanesca</h3>
                             <p>
                                 Blockchain security research for measuring DeFi attack playbooks at scale, connecting
